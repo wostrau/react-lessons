@@ -7,7 +7,8 @@ import UncontrolledRating from './components/UncontrolledRating/UncontrolledRati
 import Rating, {RatingValuePropsType} from './components/Rating/Rating';
 
 function App() {
-    const [ratingValue, setRatingValue] = useState<RatingValuePropsType>(0)
+    const [ratingValue, setRatingValue] = useState<RatingValuePropsType>(0);
+    const [collapsed, setCollapsed] = useState<boolean>(false);
 
     return (
         <div className={'App'}>
@@ -20,7 +21,7 @@ function App() {
             />*/}
             <Accordion
                 title={'Menu'}
-                collapsed={false}
+                collapsed={collapsed}
             />
             {/*<UncontrolledRating/>*/}
             <Rating
