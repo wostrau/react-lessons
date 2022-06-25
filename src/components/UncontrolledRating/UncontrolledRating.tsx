@@ -5,7 +5,7 @@ type RatingPropsType = {
 }
 
 function UncontrolledRating(props: RatingPropsType) {
-    const [value, setValue] = useState(0)
+    const [value, setValue] = useState(0);
 
     return (
         <div>
