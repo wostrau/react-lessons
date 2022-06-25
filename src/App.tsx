@@ -15,12 +15,12 @@ function App() {
             <UncontrolledAccordion
                 title={'Menu'}
             />
-            <Accordion
+            {/*<Accordion
                 title={'Menu'}
                 collapsed={false}
-            />
+            />*/}
             <UncontrolledRating/>
-            <Rating value={3}/>
+            {/*<Rating value={3}/>*/}
         </div>
     );
 }
