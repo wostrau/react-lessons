@@ -1,32 +1,36 @@
 import React, {useState} from 'react';
 import './App.css';
-import OnOff from './components/OnOff/OnOff';
+import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import Accordion from './components/Accordion/Accordion';
 import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating';
 import Rating, {RatingValuePropsType} from './components/Rating/Rating';
+import OnOff from './components/OnOff/OnOff';
 
 function App() {
     const [ratingValue, setRatingValue] = useState<RatingValuePropsType>(0);
     const [collapsed, setCollapsed] = useState<boolean>(false);
+    const [switchOn, setSwitchOn] = useState<boolean>(true)
 
     return (
         <div className={'App'}>
-            <OnOff
-                on={false}
+            <UncontrolledOnOff
+                onChange={setSwitchOn}
             />
-            {/*<UncontrolledAccordion
-                title={'Menu'}
-                collapsed={false}
-            />*/}
             <Accordion
                 title={'Menu'}
                 collapsed={collapsed}
+                onChange={() => {
+                    setCollapsed(!collapsed)
+                }}
             />
-            {/*<UncontrolledRating/>*/}
             <Rating
                 value={ratingValue}
                 onClick={setRatingValue}
+            />
+            <OnOff
+                on={switchOn}
+                onChange={setSwitchOn}
             />
         </div>
     );
