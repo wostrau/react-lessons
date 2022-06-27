@@ -1,17 +1,18 @@
 import React, {useState} from 'react';
-import { action } from '@storybook/addon-actions';
-import Accordion from './Accordion';
+import Rating, {RatingValuePropsType} from './Rating';
 
 export default {
-    title: 'Accordion',
-    component: Accordion,
+    title: 'Rating',
+    component: Rating,
 }
 
-const callback = action('accordion mode change event fired')
-
-export const MenuCollapsedMode = () => <Accordion title={'Menu'} collapsed={true} onChange={callback}/>
-export const UsersUncollapsedMode = () => <Accordion title={'Users'} collapsed={false} onChange={callback}/>
-export const ModeChanging = () => {
-    const [value, setValue] = useState<boolean>(true);
-    return <Accordion title={'Users'} collapsed={value} onChange={()=>{setValue(!value)}}/>;
+export const EmptyRating = () => <Rating value={0} onClick={x=>x}/>
+export const Rating1 = () => <Rating value={1} onClick={x=>x}/>
+export const Rating2 = () => <Rating value={2} onClick={x=>x}/>
+export const Rating3 = () => <Rating value={3} onClick={x=>x}/>
+export const Rating4 = () => <Rating value={4} onClick={x=>x}/>
+export const Rating5 = () => <Rating value={5} onClick={x=>x}/>
+export const RatingChanging = () => {
+    const [rating, setRating] = useState<RatingValuePropsType>(3);
+    return <Rating value={rating} onClick={setRating}/>;
 };
