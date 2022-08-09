@@ -1,9 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
-import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import Accordion from './components/Accordion/Accordion';
-import UncontrolledRating from './components/UncontrolledRating/UncontrolledRating';
 import Rating, {RatingValuePropsType} from './components/Rating/Rating';
 import OnOff from './components/OnOff/OnOff';
 
@@ -20,9 +18,7 @@ function App() {
             <Accordion
                 title={'Menu'}
                 collapsed={collapsed}
-                onChange={() => {
-                    setCollapsed(!collapsed)
-                }}
+                onChange={() => {setCollapsed(!collapsed)}}
             />
             <Rating
                 value={ratingValue}

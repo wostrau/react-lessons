@@ -3,7 +3,7 @@ import { action } from '@storybook/addon-actions';
 import UncontrolledOnOff from './UncontrolledOnOff';
 
 export default {
-    title: 'components/UncontrolledOnOff',
+    title: 'components/yUncontrolledOnOff',
     component: UncontrolledOnOff,
 }
 
